@@ -5,7 +5,7 @@ public class EditMenu implements Menu {
     private JMenu editMenu = new JMenu("Edit");
 
     @Override
-    public void createsMenu(){
+    public void createsMenu() {
         JMenuItem search = new JMenuItem("Search");
         JMenuItem replace = new JMenuItem("Replace");
         JMenuItem count = new JMenuItem("Count");

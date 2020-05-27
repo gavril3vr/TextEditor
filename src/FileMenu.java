@@ -1,18 +1,26 @@
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class FileMenu implements Menu {
 
     private JMenu fileMenu = new JMenu("File");
+    private JMenuItem openOption = new JMenuItem("Open");
+
+
 
     @Override
-    public void createsMenu(){
-        JMenuItem openOption = new JMenuItem("Open");
+    public void createsMenu() {
+        openOption = new JMenuItem("Open");
         JMenuItem saveAsOption = new JMenuItem("Save as");
         JMenuItem saveOption = new JMenuItem("Save");
 
         fileMenu.add(openOption);
         fileMenu.add(saveAsOption);
         fileMenu.add(saveOption);
+
+        listenActions();
+
     }
 
 
@@ -21,4 +29,14 @@ public class FileMenu implements Menu {
         createsMenu();
         return fileMenu;
     }
+
+    public void listenActions(){
+        openOption.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent ev) {
+                
+            }
+        });
+    }
+
+
 }

@@ -1,6 +1,4 @@
 import javax.swing.*;
-import java.awt.*;
-import java.io.File;
 
 public class Display {
     private JFrame frame;
@@ -9,23 +7,29 @@ public class Display {
     private FileMenu fileMenu = new FileMenu();
     private EditMenu editMenu = new EditMenu();
 
-    public void createWindow(){
+    public void setTxtArea(JTextArea txtArea) {
+        this.txtArea = txtArea;
+    }
+
+    public void createWindow() {
         setsDefaultSettings();
         txtArea = new JTextArea(10, 10);
         frame.add(txtArea);
+        txtArea.setText("sdasdasdasfsdgdfhgdfh");
         createsMenuBar();
     }
 
-    public void setsDefaultSettings(){
+    public void setsDefaultSettings() {
         frame = new JFrame("Text Editor");
         frame.pack();
         frame.setSize(100, 100);
         frame.setVisible(true);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        frame.getContentPane().setBackground(Color.DARK_GRAY);
+
+
     }
 
-    public void createsMenuBar(){
+    public void createsMenuBar() {
         menuBar.add(fileMenu.getsMenu());
         menuBar.add(editMenu.getsMenu());
         frame.setJMenuBar(menuBar);
