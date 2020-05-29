@@ -1,5 +1,6 @@
 import javax.swing.*;
 import javax.swing.text.Highlighter;
+import java.awt.*;
 
 public class Display {
     private SideComponents sideComponents = new SideComponents();
@@ -21,8 +22,8 @@ public class Display {
 
     public void setsDefaultSettings() {
         sideComponents.getTxtArea().setLineWrap(true);
-        sideComponents.getFrame().setSize(100, 100);
-        sideComponents.getFrame().pack();
+        sideComponents.getFrame().setLayout(new BorderLayout());
+        sideComponents.getFrame().setSize(1024, 768);
         sideComponents.getFrame().setVisible(true);
         sideComponents.getFrame().setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
