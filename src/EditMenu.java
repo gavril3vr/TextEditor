@@ -17,6 +17,7 @@ public class EditMenu implements Menu, ActionListener {
     private int findIndex;
     private Highlighter.HighlightPainter painter = new DefaultHighlighter.DefaultHighlightPainter(Color.CYAN);
 
+
     public EditMenu(SideComponents sideComponents, Highlighter hl){
         this.sideComponents = sideComponents;
         this.hl = hl;
@@ -26,16 +27,13 @@ public class EditMenu implements Menu, ActionListener {
     public void createsMenu() {
         JMenuItem menuSearch = new JMenuItem("Search");
         JMenuItem menuReplace = new JMenuItem("Replace");
-        JMenuItem menuCount = new JMenuItem("Count");
 
         menuSearch.addActionListener(this);
         menuReplace.addActionListener(this);
 
         editMenu.add(menuSearch);
         editMenu.add(menuReplace);
-        editMenu.add(menuCount);
 
-        listenActions();
     }
 
     @Override
@@ -262,7 +260,6 @@ public class EditMenu implements Menu, ActionListener {
 
             jd.setVisible(true);
         }
-
     }
 
     public void setHighlight(int idx, String findStr) {

@@ -8,12 +8,17 @@ public class Display {
     private FileMenu fileMenu;
     private EditMenu editMenu;
     private FormatMenu formatMenu;
-    private Highlighter hl = sideComponents.getTxtArea().getHighlighter();
+    private ViewMenu viewMenu;
+
+    private Highlighter hl = sideComponents
+            .getTxtArea()
+            .getHighlighter();
 
     public void createWindow() {
         fileMenu = new FileMenu(sideComponents);
         editMenu = new EditMenu(sideComponents, hl);
         formatMenu = new FormatMenu(sideComponents);
+        viewMenu = new ViewMenu(sideComponents);
 
         setsDefaultSettings();
         sideComponents.getFrame().add(sideComponents.getScrollPane());
@@ -32,8 +37,14 @@ public class Display {
         menuBar.add(fileMenu.getsMenu());
         menuBar.add(editMenu.getsMenu());
         menuBar.add(formatMenu.getsMenu());
-
+        menuBar.add(viewMenu.getsMenu());
         sideComponents.getFrame().setJMenuBar(menuBar);
+
+
     }
+
+
+
+
 
 }
