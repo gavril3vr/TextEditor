@@ -28,7 +28,7 @@ public class Display {
     public void setsDefaultSettings() {
         sideComponents.getTxtArea().setLineWrap(true);
         sideComponents.getFrame().setLayout(new BorderLayout());
-        sideComponents.getFrame().setSize(1024, 768);
+        sideComponents.getFrame().setSize(800, 600);
         sideComponents.getFrame().setVisible(true);
         sideComponents.getFrame().setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
