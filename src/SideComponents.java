@@ -1,8 +1,19 @@
 import javax.swing.*;
 
 public class SideComponents {
-    private JFrame frame;
-    protected JTextArea txtArea;
+
+    private JFrame frame = new JFrame("Notepad");
+    private JTextArea txtArea = new JTextArea(50, 50);
+    private JScrollPane scrollPane = new JScrollPane(txtArea, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+
+
+    public JScrollPane getScrollPane() {
+        return scrollPane;
+    }
+
+    public void setScrollPane(JScrollPane scrollPane) {
+        this.scrollPane = scrollPane;
+    }
 
     public JFrame getFrame() {
         return frame;
