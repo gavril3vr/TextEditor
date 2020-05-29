@@ -35,21 +35,13 @@ public class FileMenu implements Menu, ActionListener {
         fileMenu.add(menuSave);
         fileMenu.add(menuPrint);
         fileMenu.add(menuExit);
-
     }
-
 
     @Override
     public JMenu getsMenu() {
         createsMenu();
         return fileMenu;
     }
-
-    @Override
-    public void listenActions() {
-
-    }
-
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -62,11 +54,7 @@ public class FileMenu implements Menu, ActionListener {
         } else if (line.equals("New")) {
             clearsTextArea();
         }
-
-
     }
-
-
 
     public void open() {
         FileNameExtensionFilter filter = new FileNameExtensionFilter("Text files", "txt", "html", "xml", "css", "doc", "docx");
@@ -112,9 +100,7 @@ public class FileMenu implements Menu, ActionListener {
 
                 FileWriter wr = new FileWriter(file, false);
 
-
                 BufferedWriter w = new BufferedWriter(wr);
-
 
                 w.write(sideComponents.getTxtArea().getText());
 
@@ -129,7 +115,7 @@ public class FileMenu implements Menu, ActionListener {
 
     }
 
-    public void clearsTextArea(){
+    public void clearsTextArea() {
         sideComponents.getTxtArea().setText("");
     }
 

@@ -2,7 +2,7 @@ import javax.swing.*;
 import javax.swing.text.Highlighter;
 import java.awt.*;
 
-public class Display {
+public class Editor {
     private SideComponents sideComponents = new SideComponents();
     private JMenuBar menuBar = new JMenuBar();
     private FileMenu fileMenu;
@@ -39,12 +39,7 @@ public class Display {
         menuBar.add(formatMenu.getsMenu());
         menuBar.add(viewMenu.getsMenu());
         sideComponents.getFrame().setJMenuBar(menuBar);
-
-
     }
-
-
-
 
 
 }
