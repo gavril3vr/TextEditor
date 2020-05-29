@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.text.Highlighter;
 
 public class Display {
     private SideComponents sideComponents = new SideComponents();
@@ -6,17 +7,20 @@ public class Display {
     private FileMenu fileMenu;
     private EditMenu editMenu;
     private FormatMenu formatMenu;
+    private Highlighter hl = sideComponents.getTxtArea().getHighlighter();
 
     public void createWindow() {
         fileMenu = new FileMenu(sideComponents);
-        editMenu = new EditMenu(sideComponents);
+        editMenu = new EditMenu(sideComponents, hl);
         formatMenu = new FormatMenu(sideComponents);
+
         setsDefaultSettings();
         sideComponents.getFrame().add(sideComponents.getScrollPane());
         createsMenuBar();
     }
 
     public void setsDefaultSettings() {
+        sideComponents.getTxtArea().setLineWrap(true);
         sideComponents.getFrame().setSize(100, 100);
         sideComponents.getFrame().pack();
         sideComponents.getFrame().setVisible(true);
